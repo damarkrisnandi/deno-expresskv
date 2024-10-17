@@ -15,3 +15,5 @@ app.use("/users", usersRouter);
 app.listen(port, () => {
   console.log(`Listening on ${port} ...`);
 });
+
+export default app;
