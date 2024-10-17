@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno run -A --watch --unstable-kv main.ts",
-    "build": "deno run -A --unstable-kv main.ts"
+    "build": "deno run -A --unstable-kv main.ts build"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
