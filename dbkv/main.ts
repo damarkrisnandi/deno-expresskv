@@ -28,7 +28,10 @@ export async function deleteKV(prefix: string, id: string): Promise<string> {
   await kv.delete([prefix, id]);
   return "/";
 }
-export async function getKV(prefix: string, id: string): Promise<string | null> {
+export async function getKV(
+  prefix: string,
+  id: string,
+): Promise<string | null> {
   const res: any = await kv.get([prefix, id]);
   return res.value;
 }
