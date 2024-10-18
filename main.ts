@@ -6,6 +6,7 @@ import express, { Response } from "express";
 import cors from "cors"
 import mainRouter from "./routes/index.ts";
 import usersRouter from "./routes/users.ts";
+import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
 
 const app = express();
 const port = Number(Deno.env.get("PORT")) || 3000;
@@ -14,7 +15,9 @@ app.use(express.json());
 
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
-
+app.use(oakCors({
+  origin: "*",
+}))
 // set cors
 app.use((req: any, res: Response) => {
   res.set("Access-Control-Allow-Origin", "*");
